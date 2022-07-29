@@ -123,10 +123,10 @@ function getNextPalindromeDate(date){
 
     var ctr = 0;
     var nextDate = getNextDate(date);
-    var i;
-    while(i){
+    
+    while(1){
         ctr++;
-        var isPalindrome = checkPalindromeForAllDates(nextdate);
+        var isPalindrome = checkPalindromeForAllDates(nextDate);
         if(isPalindrome){
             break;
         }
@@ -140,7 +140,7 @@ var dateInputRef = document.querySelector("#bday-input");
 var showBtnRef = document.querySelector("#show-btn");
 var resultRef = document.querySelector("#result");
 
-function clickHandler(){
+function clickHandler(e){
     var bdayStr = dateInputRef.value;
 
     if(bdayStr !== ''){
@@ -160,7 +160,7 @@ function clickHandler(){
         else{
             var [ctr, nextDate] = getNextPalindromeDate(date);
             // resultRef.innerText = 'the next palindrome date is {nextDate.day}-${nextDate.month}-${nextDate.year} ,  you missed it by ${ctr} days!'
-            resultRef.innerText = 'the next palindrome date is'+ nextDate.day+'-'+nextDate.month+'-'+nextDate.year +'  you missed it by' + ctr +'days!'
+            resultRef.innerText =( 'the next palindrome date is'+ nextDate.day+'-'+nextDate.month+'-'+nextDate.year + ' you missed it by' + ctr +'days!')
         }
     }
 
